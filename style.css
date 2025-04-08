@@ -1,3 +1,18 @@
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* LOCATION SCREEN */
 .location-screen {
   position: fixed;
   inset: 0;
@@ -48,18 +63,7 @@
   background: #00796b;
 }
 
-@keyframes popUp {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-/* GENERAL STYLING */
-body {
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
-  color: #333;
-  font-family: Arial, sans-serif;
-  scroll-behavior: smooth;
-}
-
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -96,6 +100,7 @@ body {
   color: #26c6da;
 }
 
+/* HOME SECTION */
 .home {
   text-align: center;
   padding: 60px 20px;
@@ -173,7 +178,7 @@ small {
   color: #666;
 }
 
-/* SHOP ANIMATION */
+/* SHOP MACHINE ANIMATION */
 .animation-box {
   display: flex;
   justify-content: center;
@@ -205,6 +210,26 @@ small {
 }
 
 /* ANIMATIONS */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -218,19 +243,4 @@ small {
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(50px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  0% { opacity: 0; transform: translateY(-50px); }
-  100% { opacity: 1; transform: translateY(0); }
 }
