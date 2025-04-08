@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enter Location - LaundryExpress</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">LaundryExpress</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <section class="section fade-in">
+    <h2 class="location-heading">Where are you located?</h2>
+    <p class="location-subtext">We’ll find the nearest laundry center for you.</p>
+
+    <div class="location-box bounce-in">
+      <input type="text" id="locationInput" placeholder="Enter your location..." />
+      <button onclick="submitLocation()">Submit</button>
+    </div>
+  </section>
+
+  <script>
+    function submitLocation() {
+      const loc = document.getElementById("locationInput").value.trim();
+      if (!loc) {
+        alert("Please enter your location!");
+        return;
+      }
+
+      // Redirect or store location
+      window.location.href = "index.html?location=" + encodeURIComponent(loc);
+    }
+  </script>
+</body>
+</html>
