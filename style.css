@@ -1,17 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
+/* GENERAL STYLING */
 body {
   background: linear-gradient(135deg, #e0f7fa, #80deea);
   color: #333;
+  font-family: Arial, sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -26,8 +20,9 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -39,42 +34,26 @@ body {
 .nav-links a {
   color: white;
   text-decoration: none;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #80deea;
-  left: 0;
-  bottom: -5px;
-  transition: width 0.3s ease-in-out;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #80deea;
+  color: #26c6da;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* Home Section */
 .home {
   text-align: center;
   padding: 60px 20px;
   background-color: #e0f2f1;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 1.2s ease;
+  border-bottom: 4px solid #b2ebf2;
 }
 
 .home h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #006064;
-  animation: floatText 3s ease-in-out infinite;
 }
 
 .home p {
@@ -82,54 +61,40 @@ body {
   color: #004d40;
 }
 
-/* General Section */
+/* SECTIONS */
 .section {
   background: white;
   border-radius: 15px;
-  padding: 30px;
+  padding: 30px 20px;
   margin: 30px auto;
-  max-width: 600px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: slideIn 1s ease forwards;
+  max-width: 700px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
 }
 
-/* Form Elements */
+.section h2 {
+  color: #006064;
+  margin-bottom: 20px;
+}
+
 label {
   font-weight: bold;
-  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
 }
 
 textarea, input, select {
-  display: block;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 15px;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: border 0.3s;
 }
 
 textarea:focus, input:focus, select:focus {
-  box-shadow: 0 0 8px #80deea;
+  border: 2px solid #26c6da;
   outline: none;
-}
-
-input[type="range"] {
-  -webkit-appearance: none;
-  height: 5px;
-  background: #80deea;
-  border-radius: 5px;
-  outline: none;
-  margin-bottom: 10px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  background: #006064;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 button {
@@ -140,25 +105,27 @@ button {
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #005662;
-  transform: scale(1.05);
 }
 
-button:active {
-  animation: bounce 0.3s ease;
+small {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  color: #666;
 }
 
-/* Machine Animation Box */
+/* SHOP ANIMATION */
 .animation-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  animation: pulse 3s infinite;
+  height: 220px;
+  animation: pulse 2s infinite;
 }
 
 .machine {
@@ -168,7 +135,7 @@ button:active {
   border-radius: 50%;
   position: relative;
   box-shadow: inset 0 0 10px #80deea;
-  animation: rotateMachine 5s linear infinite, float 3s ease-in-out infinite;
+  animation: rotateMachine 4s linear infinite;
 }
 
 .machine::after {
@@ -180,18 +147,10 @@ button:active {
   height: 50px;
   background: #80deea;
   border-radius: 50%;
-  animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
 }
 
-#status {
-  text-align: center;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #004d40;
-  animation: fadeIn 1s ease;
-}
-
-/* Animations */
+/* ANIMATIONS */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -208,33 +167,71 @@ button:active {
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
+  0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideIn {
-  0% { opacity: 0; transform: translateX(-50px); }
-  100% { opacity: 1; transform: translateX(0); }
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideDown {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(0); }
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.location-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #006064, #26c6da);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+  z-index: 9999;
 }
 
-@keyframes bounce {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.1); }
-  100% { transform: scale(1); }
+.location-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: popUp 0.6s ease-in-out;
 }
 
-@keyframes floatText {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
+.location-box h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.location-box input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
 }
+
+.location-box button {
+  background: #004d40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.location-box button:hover {
+  background: #00796b;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
