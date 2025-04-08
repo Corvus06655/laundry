@@ -23,8 +23,27 @@
 
   <section id="user" class="section">
     <h2>User: Enter Cloth Details</h2>
+
     <label for="cloth">Type of Clothes:</label>
     <textarea id="cloth" placeholder="E.g., Shirts, Pants, Bedsheets..."></textarea>
+
+    <label for="pickup">Pickup Option:</label>
+    <select id="pickup">
+      <option value="yes">Yes - Home Pickup</option>
+      <option value="no">No - I'll Drop</option>
+    </select>
+
+    <label for="detergent">Preferred Detergent:</label>
+    <select id="detergent">
+      <option value="standard">Standard</option>
+      <option value="organic">Organic</option>
+      <option value="fragranceFree">Fragrance-Free</option>
+    </select>
+
+    <label for="urgency">Urgency:</label>
+    <input type="range" id="urgency" min="1" max="3" value="2" />
+    <small>1 = Normal, 3 = Express</small>
+
     <button onclick="submitClothes()">Submit</button>
   </section>
 
@@ -33,7 +52,7 @@
     <div class="animation-box">
       <div class="machine"></div>
     </div>
-    <p id="status"></p>
+    <p id="status">Awaiting submission...</p>
   </section>
 
   <script src="script.js"></script>
