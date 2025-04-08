@@ -47,6 +47,32 @@ body {
   border-radius: 8px;
   margin-top: 10px;
 }
+.hidden {
+  display: none;
+}
+
+.processing-details {
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.processing-details ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#status {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #006064;
+  animation: pulse 2s infinite;
+}
+
 
 .location-box button {
   background: #004d40;
