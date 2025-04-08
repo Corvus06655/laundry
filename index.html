@@ -2,58 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Laundry Services</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">LaundryExpress</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#user">User Section</a></li>
-      <li><a href="#shop">Shop Section</a></li>
-    </ul>
-  </nav>
 
-  <section id="home" class="home">
-    <h1>Welcome to LaundryExpress</h1>
-    <p>Your one-stop solution for clean clothes, fast service, and happy customers!</p>
-  </section>
-
-  <section id="user" class="section">
-    <h2>User: Enter Cloth Details</h2>
-
-    <label for="cloth">Type of Clothes:</label>
-    <textarea id="cloth" placeholder="E.g., Shirts, Pants, Bedsheets..."></textarea>
-
-    <label for="pickup">Pickup Option:</label>
-    <select id="pickup">
-      <option value="yes">Yes - Home Pickup</option>
-      <option value="no">No - I'll Drop</option>
-    </select>
-
-    <label for="detergent">Preferred Detergent:</label>
-    <select id="detergent">
-      <option value="standard">Standard</option>
-      <option value="organic">Organic</option>
-      <option value="fragranceFree">Fragrance-Free</option>
-    </select>
-
-    <label for="urgency">Urgency:</label>
-    <input type="range" id="urgency" min="1" max="3" value="2" />
-    <small>1 = Normal, 3 = Express</small>
-
-    <button onclick="submitClothes()">Submit</button>
-  </section>
-
-  <section id="shop" class="section">
-    <h2>Laundry Shop: Processing</h2>
-    <div class="animation-box">
-      <div class="machine"></div>
+  <!-- Location Prompt -->
+  <div id="location-screen" class="location-screen">
+    <div class="location-box">
+      <h2>Where are you?</h2>
+      <p>We need your location to find nearby laundry services!</p>
+      <button onclick="getLocation()">Share My Location</button>
+      <input type="text" id="manualLocation" placeholder="Or enter your city..." />
+      <button onclick="enterManualLocation()">Submit</button>
     </div>
-    <p id="status">Awaiting submission...</p>
-  </section>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display:none;">
+    <nav class="navbar">
+      <div class="logo">LaundryExpress</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#user">User Section</a></li>
+        <li><a href="#shop">Shop Section</a></li>
+      </ul>
+    </nav>
+
+    <section id="home" class="home">
+      <h1>Welcome to LaundryExpress</h1>
+      <p id="location-info">Your one-stop solution for clean clothes!</p>
+    </section>
+
+    <section id="user" class="section">
+      <h2>User: Enter Cloth Details</h2>
+      <label for="cloth">Type of Clothes:</label>
+      <textarea id="cloth" placeholder="E.g., Shirts, Pants, Bedsheets..."></textarea>
+
+      <label for="pickup">Pickup Option:</label>
+      <select id="pickup">
+        <option value="yes">Yes - Home Pickup</option>
+        <option value="no">No - I'll Drop</option>
+      </select>
+
+      <label for="detergent">Preferred Detergent:</label>
+      <select id="detergent">
+        <option value="standard">Standard</option>
+        <option value="organic">Organic</option>
+        <option value="fragranceFree">Fragrance-Free</option>
+      </select>
+
+      <label for="urgency">Urgency:</label>
+      <input type="range" id="urgency" min="1" max="3" value="2"/>
+      <small>1 = Normal, 3 = Express</small>
+
+      <button onclick="submitClothes()">Submit</button>
+    </section>
+
+    <section id="shop" class="section">
+      <h2>Laundry Shop: Processing</h2>
+      <div class="animation-box">
+        <div class="machine"></div>
+      </div>
+      <p id="status">Awaiting submission...</p>
+    </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
