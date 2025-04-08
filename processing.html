@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Processing Laundry</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,26 +10,34 @@
   <nav class="navbar">
     <div class="logo">LaundryExpress</div>
     <ul class="nav-links">
-      <li><a href="index.html">Back</a></li>
+      <li><a href="index.html">Home</a></li>
     </ul>
   </nav>
 
-  <section class="section">
+  <section class="section animated">
     <h2>Laundry Shop: Processing</h2>
+
     <div class="processing-details">
       <p><strong>Received Items:</strong></p>
       <ul id="received-list"></ul>
     </div>
+
+    <div class="progress-container">
+      <div class="step active" id="step1">Washing</div>
+      <div class="step" id="step2">Drying</div>
+      <div class="step" id="step3">Ready</div>
+    </div>
+
     <div class="animation-box">
       <div class="machine"></div>
     </div>
-    <p id="status">Washing in progress...</p>
+
+    <p id="status">Processing your clothes...</p>
   </section>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const clothes = params.get("clothes");
-
     const receivedList = document.getElementById("received-list");
 
     if (clothes) {
@@ -41,6 +49,20 @@
     } else {
       receivedList.innerHTML = "<li>No clothes provided.</li>";
     }
+
+    // Animate step progress
+    setTimeout(() => {
+      document.getElementById("step1").classList.add("done");
+      document.getElementById("step2").classList.add("active");
+      document.getElementById("status").textContent = "Drying in progress...";
+    }, 3000);
+
+    setTimeout(() => {
+      document.getElementById("step2").classList.remove("active");
+      document.getElementById("step2").classList.add("done");
+      document.getElementById("step3").classList.add("active");
+      document.getElementById("status").textContent = "Ready for pickup!";
+    }, 6000);
   </script>
 </body>
 </html>
