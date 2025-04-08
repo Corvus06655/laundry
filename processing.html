@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Processing Laundry</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">LaundryExpress</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Back</a></li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <h2>Laundry Shop: Processing</h2>
+    <div class="processing-details">
+      <p><strong>Received Items:</strong></p>
+      <ul id="received-list"></ul>
+    </div>
+    <div class="animation-box">
+      <div class="machine"></div>
+    </div>
+    <p id="status">Washing in progress...</p>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const clothes = params.get("clothes");
+
+    const receivedList = document.getElementById("received-list");
+
+    if (clothes) {
+      clothes.split(",").forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item.trim();
+        receivedList.appendChild(li);
+      });
+    } else {
+      receivedList.innerHTML = "<li>No clothes provided.</li>";
+    }
+  </script>
+</body>
+</html>
