@@ -1,9 +1,15 @@
 function submitClothes() {
-    const clothInput = document.getElementById('cloth').value.trim();
-    const status = document.getElementById('status');
-    if (clothInput) {
-      status.textContent = `Processing: ${clothInput}`;
-    } else {
-      status.textContent = 'Please enter some clothes to process.';
-    }
-  }
+  const cloth = document.getElementById("cloth").value;
+  const pickup = document.getElementById("pickup").value;
+  const detergent = document.getElementById("detergent").value;
+  const urgency = document.getElementById("urgency").value;
+
+  const status = document.getElementById("status");
+  status.innerHTML = `
+    <strong>Processing Order:</strong><br>
+    Clothes: ${cloth}<br>
+    Pickup: ${pickup}<br>
+    Detergent: ${detergent}<br>
+    Urgency: ${urgency}
+  `;
+}
