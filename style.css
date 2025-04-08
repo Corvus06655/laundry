@@ -1,3 +1,57 @@
+.location-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #006064, #26c6da);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+  z-index: 9999;
+}
+
+.location-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: popUp 0.6s ease-in-out;
+}
+
+.location-box h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.location-box input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.location-box button {
+  background: #004d40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.location-box button:hover {
+  background: #00796b;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
 /* GENERAL STYLING */
 body {
   background: linear-gradient(135deg, #e0f7fa, #80deea);
@@ -180,58 +234,3 @@ small {
   0% { opacity: 0; transform: translateY(-50px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.location-screen {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #006064, #26c6da);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 1s ease-in-out;
-  z-index: 9999;
-}
-
-.location-box {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  animation: popUp 0.6s ease-in-out;
-}
-
-.location-box h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.location-box input {
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-.location-box button {
-  background: #004d40;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.location-box button:hover {
-  background: #00796b;
-}
-
-@keyframes popUp {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
