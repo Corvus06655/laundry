@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Laundry Services</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <!-- Location Prompt -->
   <div id="location-screen" class="location-screen">
     <div class="location-box">
-      <h2>Where are you?</h2>
+      <h2><i class="fas fa-map-marker-alt"></i> Where are you?</h2>
       <p>We need your location to find nearby laundry services!</p>
-      <button onclick="getLocation()">Share My Location</button>
+      <button onclick="getLocation()">📍 Share My Location</button>
       <input type="text" id="manualLocation" placeholder="Or enter your city..." />
       <button onclick="enterManualLocation()">Submit</button>
     </div>
@@ -29,11 +31,43 @@
         <li><a href="#shop">Shop Section</a></li>
       </ul>
     </nav>
+    
+    
 
     <section id="home" class="home">
-      <h1>Welcome to LaundryExpress</h1>
-      <p id="location-info">Your one-stop solution for clean clothes!</p>
+      <h1>Welcome to <span class="highlight">LaundryExpress</span></h1>
+      <p id="location-info">Your one-stop solution for clean clothes, fast service, and happy you!</p>
     </section>
+    <section id="prices" class="section">
+      <h2>Our Prices</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Shirt</h3>
+          <p>₹30</p>
+        </div>
+        <div class="price-card">
+          <h3>T-Shirt</h3>
+          <p>₹25</p>
+        </div>
+        <div class="price-card">
+          <h3>Pants</h3>
+          <p>₹35</p>
+        </div>
+        <div class="price-card">
+          <h3>Jacket</h3>
+          <p>₹50</p>
+        </div>
+        <div class="price-card">
+          <h3>Bed Sheet</h3>
+          <p>₹60</p>
+        </div>
+        <div class="price-card">
+          <h3>Saree</h3>
+          <p>₹45</p>
+        </div>
+      </div>
+    </section>
+    
 
     <section id="user" class="section">
       <h2>User: Enter Cloth Details</h2>
@@ -51,23 +85,26 @@
         <option value="standard">Standard</option>
         <option value="organic">Organic</option>
         <option value="fragranceFree">Fragrance-Free</option>
+        <option value="hypoallergenic">Hypoallergenic</option>
+      </select>
+
+      <label for="softener">Fabric Softener:</label>
+      <select id="softener">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
       </select>
 
       <label for="urgency">Urgency:</label>
       <input type="range" id="urgency" min="1" max="3" value="2"/>
       <small>1 = Normal, 3 = Express</small>
 
+      <label for="instructions">Special Instructions:</label>
+      <textarea id="instructions" placeholder="E.g., Use cold water, separate whites..."></textarea>
+
       <button onclick="submitClothes()">Submit</button>
     </section>
 
     <section id="shop" class="section">
-      <h2>Laundry Shop: Processing</h2>
-      <div class="animation-box">
-        <div class="machine"></div>
-      </div>
-      <p id="status">Awaiting submission...</p>
-    </section>
-    <section id="shop" class="section hidden">
       <h2>Laundry Shop: Processing</h2>
       <div class="processing-details">
         <p><strong>Received Items:</strong></p>
@@ -78,7 +115,6 @@
       </div>
       <p id="status">Washing in progress...</p>
     </section>
-    
   </div>
 
   <script src="script.js"></script>
